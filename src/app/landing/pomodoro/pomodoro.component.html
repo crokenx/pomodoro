@@ -1,1 +1,15 @@
-<p class="text-9xl">{{ minutes | async | number:'2.0' }}:{{ seconds | async | number:'2.0' }}</p>
+<p class="text-9xl text-white">{{ minutes | async | number:'2.0' }}:{{ seconds | async | number:'2.0' }}</p>
+<button class=" flex
+                justify-center
+                rounded-md
+                px-4
+                py-2.5
+                text-sm
+                font-semibold leading-6 text-white shadow-sm  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
+        [ngClass]="{'bg-rose-600': !start, 'hover:bg-rose-500': !start, 'bg-green-600': start, 'hover:bg-green-500': start}"
+        (click)="flipStart()"
+                >
+  <span class="text-3xl">
+    {{ !start ? 'start' : 'stop' }}
+  </span>
+</button>
